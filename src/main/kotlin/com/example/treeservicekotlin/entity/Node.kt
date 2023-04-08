@@ -5,13 +5,13 @@ import jakarta.persistence.*
 @Entity
 class Node(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val nodeId: Long,
+    val nodeId: Long? = null,
 
     val name: String,
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "node_id")
-    val parent: Node,
+    @JoinColumn(name = "parent_id")
+    val parent: Node? = null,
 
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     val children: List<Node> = ArrayList(),

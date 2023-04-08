@@ -11,5 +11,7 @@ class TreeController(
     private val treeService: TreeService
 ) {
     @GetMapping("/node/{nodeId}")
-    fun getNode(@PathVariable nodeId: String): NodeDto = treeService.getMockNode()
+    fun getNode(@PathVariable nodeId: String, expand: Boolean = false): NodeDto {
+        return treeService.getNode(nodeId.toLong(), expand)
+    }
 }
