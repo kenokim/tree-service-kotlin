@@ -1,11 +1,8 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-import TreeView from '../components/TreeView.vue'
 </script>
 
 <template>
   <main>
-    <!-- <TheWelcome /> -->
-    <TreeView />
+    <h2>Welcome to the Tree View!</h2>
   </main>
 </template>
